@@ -1,0 +1,39 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+[*.{h,c,cc,cpp,cxx,java}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.{py,md,m,sh}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.{html,htm,xml,css}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[/etc/v2ray/**.json]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true

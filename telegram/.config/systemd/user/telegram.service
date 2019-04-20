@@ -1,0 +1,17 @@
+# NOTE: cgroup v2 must be enabled.
+# You may add systemd.unified_cgroup_hierarchy=1 in kernel cmdline.
+[Unit]
+Description=Telegram
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/telegram-desktop -- %u
+KillMode=process
+Restart=on-abnormal
+RestartSec=2
+#MemoryHigh=512M
+MemoryMax=512M
+MemorySwapMax=256M
+
+[Install]
+WantedBy=multi-user.target

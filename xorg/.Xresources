@@ -1,0 +1,86 @@
+!Emacs*geometry: 120x48
+
+!Xft.dpi: 96
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
+
+URxvt*inheritPixmap: true
+URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 50
+
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: rxvt
+URxvt.scrollBar: false
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+URxvt.cursorBlink: true
+
+URxvt*saveLines: 99999
+
+!URxvt*.depth: 32
+
+! font set
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=22:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=15
+URxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:pixelsize=15
+!URxvt.font: xft:Source Code Pro:pixelsize=20
+!URxvt.boldFont: xft:Source Code Pro:style=Bold:pixelsize=20
+!URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+!URxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:pixelsize=16
+!URxvt.letterSpace:	-1
+
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+XTerm.vt100.foreground: #F8F8F2
+XTerm.vt100.background: #282A36
+XTerm.vt100.color0:     #000000
+XTerm.vt100.color8:     #4D4D4D
+XTerm.vt100.color1:     #FF5555
+XTerm.vt100.color9:     #FF6E67
+XTerm.vt100.color2:     #50FA7B
+XTerm.vt100.color10:    #5AF78E
+XTerm.vt100.color3:     #F1FA8C
+XTerm.vt100.color11:    #F4F99D
+XTerm.vt100.color4:     #BD93F9
+XTerm.vt100.color12:    #CAA9FA
+XTerm.vt100.color5:     #FF79C6
+XTerm.vt100.color13:    #FF92D0
+XTerm.vt100.color6:     #8BE9FD
+XTerm.vt100.color14:    #9AEDFE
+XTerm.vt100.color7:     #BFBFBF
+XTerm.vt100.color15:    #E6E6E6
+
+rofi.font: DejaVu Sans Mono 20
+rofi.width: 30

@@ -1,0 +1,30 @@
+#pcm.onboard {
+#        format S16_LE
+#        rate 48000
+#        type hw
+#        card 0
+#        device 0
+#}
+#
+#pcm.!default {
+#        type plug
+#        slave.pcm "onboard"
+#}
+
+# Choices: samplerate_best samplerate_medium samplerate_order samplerate_linear
+# May need to install libsamplerate and recompile alsa-plugins
+#defaults.pcm.rate_converter "samplerate_best"
+
+#pcm.!default {
+#    type plug
+#    slave { pcm "pulse" }
+#}
+#
+#pcm.pulse {
+#    type pulse
+#}
+#
+#ctl.mixer0 {
+#    type hw
+#    card 0
+#}

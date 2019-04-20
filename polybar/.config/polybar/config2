@@ -1,0 +1,193 @@
+[colors]
+background = #2f343f
+background-alt = #4f545f
+foreground = #d8dee8
+foreground-alt = #787e68
+accent = #81a1c1
+alert = #ebcb8b
+
+[bar/arch]
+height = 20
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = Misc Ohsnap:pixelsize=12
+;:weight=bold
+font-1 = FontAwesome:pixelsize=8
+font-2 = siji:pixesize=10;1
+wm-restack = bspwm
+modules-left = cpu memory temperature
+modules-center = bspwm
+modules-right = wlan volume battery date
+line-size = 2
+line-color = #f00
+
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix = "  "
+format-prefix-foreground = ${colors.accent}
+format-underline = ${xrdb:color1}
+label = %percentage:2%%
+
+
+[module/memory]
+type = internal/memory
+interval = 5
+format-prefix = "  " 
+format-prefix-foreground = ${colors.accent}
+format-underline = ${xrdb:color10}
+label = %percentage_used%%
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+         
+format = <ramp> <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.accent}
+format-underline = ${xrdb:color5}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${xrdb:color4}
+         
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${xrdb:color5}
+          
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-mode> <label-state>
+index-sort = true
+
+label-focused-font = 4
+label-unfocused-font = 4
+label-urgent-font = 4
+label-visible-font = 4 
+
+label-focused = 
+;label-focused = %index%
+label-focused-foreground = ${xrdb:color6}
+label-focused-underline = ${xrdb:color6}
+label-focused-padding = 1
+
+label-unfocused = 
+;label-unfocused = %index%
+label-unfocused-padding = 1
+;label-unfocused-foreground = ${xrdb:color2}
+;label-unfocused-underlinde = ${xrdb:color2}
+
+label-urgent = 
+;label-urgent = %index%!
+;label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+;label-urgent-foreground = ${xrdb:color3}
+;label-urgent-underline = ${xrdb:color3}
+
+label-visible = 
+;label-visible = %index%
+;label-visible-foreground = ${xrdb:color1}
+;label-visible-underline = ${xrdb:color1}
+label-visible-padding = 1
+
+;[module/xwindow]
+
+;type = internal/xwindow
+;label = %title:0:100:...%
+
+[module/wlan]
+
+type = internal/network
+interface = wlp3s0
+interval = 60
+format-connected = <ramp-signal>  <label-connected>
+format-connected-underline = ${xrdb:color1}
+label-connected = %essid%
+format-disconnected = <label-disconnected>
+label-disconnected =   Disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+ramp-signal-5 =  
+ramp-signal-foreground = ${colors.accent}
+format-underline = ${xrdb:color1}
+
+[module/volume]
+type = internal/volume
+      
+format-volume = <label-volume> <bar-volume>
+label-volume = " "
+label-volume-foreground = ${colors.accent}
+format-muted-prefix = " "              
+format-muted-foreground = ${colors.accent}
+label-muted = Muted                     
+label-muted-foreground= ${colors.foreground-alt}
+      
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+format-volume-underline = #4bffdc
+
+
+[module/battery]
+
+type = internal/battery
+full-at = 98
+battery = BAT0
+adapter = AC
+poll-interval = 60
+format-charging = <ramp-capacity>  <label-charging>
+label-charging =  %percentage%%
+label-full = Full
+format-discharging = <ramp-capacity>  <label-discharging>
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.accent}
+format-discharging-underline = ${xrdb:color6}
+format-charging-underline = ${xrdb:color7}
+format-full-underline = ${xrdb:color2}
+
+
+[module/date]
+
+type = internal/date
+interval = 60
+label = " %date% %time%"
+date =
+date-alt = %a %d
+time = %H:%M
+time-alt = 
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+format-underline = ${xrdb:color3}
+; vim:ft=dosini

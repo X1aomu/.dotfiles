@@ -1,0 +1,14 @@
+# Vim tmp files
+*.swp
+*~
+
+.clang_complete
+
+cscope.files
+
+GPATH
+GRTAGS
+GTAGS
+
+.doxygen
+Doxyfile

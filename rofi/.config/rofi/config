@@ -1,0 +1,30 @@
+! ------------------------------------------------------------------------------
+!                      ROFI Settings
+! ------------------------------------------------------------------------------
+
+! General
+rofi -font "Hermit 20"
+rofi -opacity:             80 
+rofi -fake-transparency:   true
+rofi hide-scrollbar:       true
+
+
+! Layout
+rofi -width:            10
+rofi -column:           4
+rofi -location:         0
+rofi.lines:             8
+rofi.padding:           15
+rofi.sidebar-mode:      false
+rofi.fullscreen:        false
+
+! ------------------------------------------------------------------------------
+!                      ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled:      true
+! State                  'bg'     'fg'     'bgalt'  'hlbg'   'hlfg'
+rofi.color-normal:       #2f343f, #4bffdc, #202020, #75507b, #2f343f
+rofi.color-active:       #31C3F5, #202020, #202020, #4c544f, #2f343f
+rofi.color-urgent:       #2f343f, #442216, #202020, #442216, #2f343f
+!                        'bg'     'bc'
+rofi.color-window: #2f343f, #4bffdc

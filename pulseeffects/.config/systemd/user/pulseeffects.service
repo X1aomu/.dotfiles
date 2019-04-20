@@ -1,0 +1,13 @@
+[Unit]
+Description=Pulseeffects
+BindsTo=pulseaudio.service
+After=pulseaudio.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pulseeffects --gapplication-service
+
+[Install]
+# Leave this section empty, thus it cannot be enabled.
+# Because autostart this service will failed as X is not running.
+#WantedBy=default.target

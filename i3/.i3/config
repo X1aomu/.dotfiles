@@ -1,0 +1,235 @@
+#set $mod Mod4
+set $mod Mod1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+mouse_warping        output
+focus_follows_mouse  no
+#workspace_auto_back_and_forth yes
+new_window normal
+new_float normal
+hide_edge_borders    both
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:DejaVu Serif 11
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id sakura
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id rofi -show run -hide-scrollbar
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# move focused window between monitors
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
+
+# split in horizontal orientation
+bindsym $mod+g split h
+# split in vertical orientation
+bindsym $mod+v split v
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# focus the parent container
+bindsym $mod+p focus parent
+# focus the child container
+bindsym $mod+c focus child
+
+# workspaces variables
+set $WS1 1:>_
+set $WS2 2:Web
+set $WS3 3:Coding
+set $WS4 4:4
+set $WS5 5:Office
+set $WS6 6:Media
+set $WS7 7:7
+set $WS8 8:8
+set $WS9 9:VBox
+set $WS10 >_log
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+#scratchpad
+bindsym $mod+minus       scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#set $Locker i3lock -d && sleep 1
+set $Locker i3lock -e -f
+set $mode_system System (l)lock, (Shift+e)exit i3, (Shift+s)suspend, (Shift+h)hibernate, (Shift+Alt+r)reboot, (Shift+Alt+s)shutdown
+mode "$mode_system" {
+    bindsym l              exec --no-startup-id $Locker -t -i $LOCKSCREEN,         mode "default"
+    bindsym Shift+e        exec --no-startup-id i3-msg exit,                    mode "default"
+    bindsym Shift+s        exec --no-startup-id $Locker && systemctl suspend,   mode "default"
+    bindsym Shift+h        exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym Shift+Alt+r    exec --no-startup-id systemctl reboot,               mode "default"
+    bindsym Shift+Alt+s    exec --no-startup-id systemctl poweroff -i,          mode "default"  
+    bindsym Return   mode "default"
+    bindsym Escape   mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#Screenshot
+bindsym --release Print exec --no-startup-id scrot -bs $HOME/Pictures/scrot/shot_%Y-%m-%d-%H%M%S.png
+bindsym --release Shift+Print exec --no-startup-id scrot $HOME/Pictures/scrot/shot_%Y-%m-%d-%H%M%S.png
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class=".*[Pp]reference.*"] floating enable
+for_window [class=".*[Cc]onfig.*"] floating enable
+for_window [class=".*[Ss]etting.*"] floating enable
+for_window [class=".*[Oo]ption.*"] floating enable
+for_window [class="Octave"] floating enable
+for_window [class="Gnuplot"] floating enable
+for_window [class="Vlc"] floating enable
+for_window [class="URxvt"] border none
+for_window [class="Firefox"] border none
+for_window [class="Chromium"] border none
+for_window [class="Emacs"] border none
+for_window [class="mpv|MPlayer|feh|eog"] floating enable border pixel 3
+assign [class="Firefox"] $WS2
+assign [class="Chromium"] $WS2
+
+# exec
+exec_always --no-startup-id feh --bg-scale $WALLPAPPER
+exec --no-startup-id compton
+exec --no-startup-id fcitx
+exec --no-startup-id volumeicon
+
+#set $WALLPAPPER $HOME/Pictures/Wallpapers/yourname.bmp
+set $WALLPAPPER $HOME/Pictures/Wallpapers/yourname2.jpg
+#set $LOCKSCREEN $HOME/Pictures/Wallpapers/lockscreen.png
+set $LOCKSCREEN $HOME/Pictures/Wallpapers/snzmlx.png
+
+# tango dark
+set $darkblue       #204A87
+set $darkbrown      #8F5902
+set $darkgreen      #4E9A06
+set $darkmagenta    #5C3566
+set $darkred        #A40000
+set $darkyellow     #C4A000
+set $darkorange     #CE5C00
+# tango light
+set $lightblue      #729FCF
+set $lightbrown     #E9B96E
+set $lightgreen     #8AE234
+set $lightmagenta   #AD7FA8
+set $lightred       #EF2929
+set $lightyellow    #FCE94F
+set $lightorange    #FCAF3E
+# tango normal
+set $blue           #3465A4
+set $brown          #C17D11
+set $green          #73D216
+set $magenta        #75507B
+set $red            #CC0000
+set $yellow         #EDD400
+set $orange         #F57900
+# tango mono
+set $black          #555753
+set $grey           #BABDB6
+set $white          #EEEEEC
+set $darkblack      #2E3436
+set $darkgrey       #888A85
+set $darkwhite      #D3D7CF
+# my color
+set $bg_color #2f343f
+set $inactive_bg_color #3e454e
+set $text_color #f3f4f5
+set $inactive_text_color #676e7d
+set $urgent_bg_color #e5e935
+# class                 border             background          text                 indicator
+client.focused          $bg_color          $bg_color           $text_color          $green
+client.unfocused        $inactive_bg_color $inactive_bg_color  $inactive_text_color $green
+client.focused_inactive $inactive_bg_color $inactive_bg_color  $inactive_text_color $green
+client.urgent           $urgent_bg_color   $urgent_bg_color    $text_color          $green
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    #tray_output primary
+    status_command i3status -c $HOME/.i3/i3status.conf
+	position bottom
+	strip_workspace_numbers yes
+	colors {
+        background          $bg_color
+        separator           #757575
+        statusline          $text_color
+        # <workclass>       <border>           <backg>             <text>
+        active_workspace    $darkgrey          $black              $grey
+        focused_workspace   $bg_color          $bg_color           $text_color         
+        inactive_workspace  $inactive_bg_color $inactive_bg_color  $inactive_text_color
+        urgent_workspace    $urgent_bg_color   $urgent_bg_color    $text_color         
+	}
+}
+
