@@ -13,6 +13,16 @@ if [[ $- != *i* ]]; then
     return
 fi
 
+# customize
+# ------------
+# Auto "cd" when entering just a path
+shopt -s autocd
+
+# bash-completion
+# ------------
+[[ -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # fzf
 # ------------
 if `which fzf > /dev/null`; then

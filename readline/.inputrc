@@ -1,0 +1,8 @@
+# do not bell on tab-completion
+set bell-style none
+
+# make tab completion easier to use
+# see https://github.com/scop/bash-completion
+set show-all-if-ambiguous on
+set visible-stats on
+set page-completions off
