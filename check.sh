@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 all_files=()
-for d in `find . -maxdepth 1 -not \( -path "./.git" -prune \) -a -type d -not -name .`; do
+for d in `find . -maxdepth 1 -not \( -path "./.git" -prune \) -type d -not -name .`; do
     for f in `find $d -type f`; do
         all_files+=("$f")
     done

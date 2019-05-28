@@ -1,6 +1,6 @@
 #!/bin/sh
 
-all_packages=`find . -maxdepth 1 -not \( -path "./.git" -prune \) -a -type d | tail -n +2 | sed 's|^\./||'`
+all_packages=`find . -maxdepth 1 -not \( -path "./.git" -prune \) -type d -not -name . | sed 's|^\./||'`
 dryrun=""
 verbose="-v"
 use_all=0
