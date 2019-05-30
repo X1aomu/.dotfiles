@@ -34,18 +34,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-export LANG="en_US.UTF-8"
-#export LC_COLLATE="zh_CN.UTF-8"
-export LC_CTYPE="zh_CN.UTF-8"
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
-export XMODIFIERS="@im=fcitx"
-#export TERMINAL=terminator
 numlockx &
-
-export XDG_CONFIG_HOME="$HOME/.config"
-
-set QTCREATOR_DISABLE_NATIVE_MENUBAR
 
 #exec gnome-session
 exec startkde

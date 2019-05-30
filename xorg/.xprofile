@@ -1,11 +1,14 @@
+xrandr --auto
+
 export LANG="en_US.UTF-8"
 #export LC_COLLATE="zh_CN.UTF-8"
 export LC_CTYPE="zh_CN.UTF-8"
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export XMODIFIERS="@im=fcitx"
-xrandr --auto
 
-set QTCREATOR_DISABLE_NATIVE_MENUBAR
+export XDG_CONFIG_HOME="$HOME/.config"
+
+export QTCREATOR_DISABLE_NATIVE_MENUBAR=""
 
 numlockx &
