@@ -75,17 +75,7 @@ set wrap
 set history=1000
 set autoindent
 set modeline
-set modelines=5
-
-inoremap jk <ESC>
-
-syntax on
-
-" color scheme
-let g:solarized_term_italics = 1 " must set this before setting colorscheme
-set background=dark
-colorscheme solarized8
-let g:airline_theme = 'solarized'
+set modelines=3
 
 " Enable true color
 if exists('+termguicolors')
@@ -93,6 +83,15 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+" color scheme
+set background=light
+let g:solarized_term_italics = 1 " must set this before setting colorscheme
+let g:solarized_extra_hi_groups = 1
+colorscheme solarized8
+let g:airline_theme = 'solarized'
+
+syntax on
 
 if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
