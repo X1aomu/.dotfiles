@@ -86,7 +86,6 @@ endif
 
 " color scheme
 set background=light
-let g:solarized_term_italics = 1 " must set this before setting colorscheme
 let g:solarized_extra_hi_groups = 1
 colorscheme solarized8
 let g:airline_theme = 'solarized'
