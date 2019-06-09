@@ -19,7 +19,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " editing
 Plug 'editorconfig/editorconfig-vim'
-Plug 'justinmk/vim-syntax-extra'
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -79,9 +79,9 @@ set modelines=3
 
 " Enable true color
 if exists('+termguicolors')
-  set termguicolors
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
 " color scheme
