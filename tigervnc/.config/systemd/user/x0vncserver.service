@@ -8,4 +8,3 @@ ExecStart=/usr/bin/x0vncserver -rfbport 5903 -rfbauth %h/.vnc/passwd
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target

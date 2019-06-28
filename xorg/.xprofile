@@ -9,6 +9,9 @@ export XMODIFIERS="@im=fcitx"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# 解决 KDE 撕裂问题
+#export KWIN_TRIPLE_BUFFER=1
+
 export QTCREATOR_DISABLE_NATIVE_MENUBAR=""
 
 numlockx &
