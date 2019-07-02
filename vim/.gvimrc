@@ -3,14 +3,25 @@ if has("unix")
 elseif has("win32") || has("win64")
   set guifont=Consolas:h12
 endif
+" toolbar
 set guioptions-=T
+" menubar
 set guioptions-=m
-set guioptions-=r
+" left-hand scrollbar
 set guioptions-=l
-set guioptions-=R
 set guioptions-=L
+" right-hand scrollbar
+set guioptions-=r
+set guioptions-=R
+" autoselect
 set guioptions+=a
+" use console dialog
 set guioptions+=c
+" use tabline instead of guitablabel
+set guioptions-=e
+" don't auto resize window size
+set guioptions+=k
+
 set columns=108
 set lines=36
 
