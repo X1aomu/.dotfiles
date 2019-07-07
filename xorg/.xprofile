@@ -1,3 +1,4 @@
+xrandr --dpi 125/eDP-1
 xrandr --auto
 
 export LANG="en_US.UTF-8"

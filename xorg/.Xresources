@@ -1,17 +1,13 @@
 !Emacs*geometry: 120x48
 
-!Xft.dpi: 96
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
+! for monitor eDP-1
+! needed for some programs (like firefox) to detect dpi properly
+Xft.dpi: 125
 
 URxvt*inheritPixmap: true
 URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 50
+URxvt*.shading: 40
 
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollstyle: rxvt
