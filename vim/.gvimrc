@@ -1,5 +1,5 @@
 if has("unix")
-  set guifont=Hack\ 10
+  set guifont=monospace\ 10
 elseif has("win32") || has("win64")
   set guifont=Consolas:h12
 endif
@@ -22,7 +22,7 @@ set guioptions-=e
 " don't auto resize window size
 set guioptions+=k
 
-set columns=108
+set columns=128
 set lines=36
 
 autocmd GuiEnter * silent exec "!transset -a 0.50"
