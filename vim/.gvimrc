@@ -1,5 +1,5 @@
 if has("unix")
-  set guifont=Hack\ 12
+  set guifont=Hack\ 10
 elseif has("win32") || has("win64")
   set guifont=Consolas:h12
 endif
