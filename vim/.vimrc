@@ -89,6 +89,7 @@ set background=light
 let g:solarized_extra_hi_groups = 1
 colorscheme solarized8
 let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
 
 syntax on
 
