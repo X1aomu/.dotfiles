@@ -110,6 +110,9 @@ if [[ -z "$TMUX" ]]; then
     tmux new -A -s `hostname`
 fi
 
+# environment
+export EDITOR='vim'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
