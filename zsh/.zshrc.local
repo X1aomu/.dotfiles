@@ -24,6 +24,7 @@ fi
 # ------------
 if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
     ZSH_AUTOSUGGEST_USE_ASYNC="" # enable asynchronous mode
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
     source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
@@ -32,5 +33,9 @@ fi
 if [[ -z "$TMUX" ]]; then
     tmux new -A -s `hostname`
 fi
+
+# environment
+# ------------
+export EDITOR='vim'
 
 # vim: set et ts=4 sw=4 :

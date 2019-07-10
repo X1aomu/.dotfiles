@@ -75,43 +75,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Test for an interactive shell.  There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
-# ------------
-if [[ $- != *i* ]]; then
-    # Shell is non-interactive.  Be done now!
-    return
-fi
-
-# fzf
-# ------------
-if `which fzf > /dev/null`; then
-    source "/usr/share/fzf/completion.zsh"
-    source "/usr/share/fzf/key-bindings.zsh"
-elif [ -d ~/.fzf ]; then
-    if [[ ! "$PATH" == "*$HOME/.fzf/bin*" ]]; then
-        export PATH="$PATH:$HOME/.fzf/bin"
-    fi
-    source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
-    source "$HOME/.fzf/shell/key-bindings.zsh"
-fi
-
-# zsh-autosuggestions
-# ------------
-if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-    ZSH_AUTOSUGGEST_USE_ASYNC="" # enable asynchronous mode
-    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# tmux
-# ------------
-if [[ -z "$TMUX" ]]; then
-    tmux new -A -s `hostname`
-fi
-
-# environment
-export EDITOR='vim'
+source $HOME/.zshrc.local
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
