@@ -50,6 +50,11 @@ call plug#end()
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K><c-o> :pyf /usr/share/clang/clang-format.py<cr>
 
+nnoremap <leader>jj :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jD :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
+
 " first of all
 set nocompatible
 
@@ -64,7 +69,6 @@ set laststatus=2
 set hlsearch
 set ignorecase smartcase
 set incsearch
-
 " navigation
 set scrolloff=1
 set backspace=indent,eol,start " allow backspacing over everything
