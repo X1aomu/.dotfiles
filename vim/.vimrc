@@ -55,6 +55,11 @@ nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jD :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 
+inoremap jk <ESC>
+set timeout
+set timeoutlen=300
+set ttimeoutlen=10
+
 " first of all
 set nocompatible
 
