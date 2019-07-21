@@ -80,9 +80,12 @@ set backspace=indent,eol,start " allow backspacing over everything
 set whichwrap=b,s,<,>,[,]
 set wrap
 
+" indent
+set noautoindent
+set smarttab
+
 " misc
 set history=1000
-set autoindent
 set modeline
 set modelines=3
 
@@ -134,4 +137,4 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 set fileencodings=usc-bom,utf-8,default,gb18030,cp936,latin1
-" vim: set et ts=2 sw=2 :
+" vim: set et sts=2 sw=2 :

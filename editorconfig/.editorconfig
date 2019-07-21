@@ -10,7 +10,7 @@ charset = utf-8
 
 [*.{h,c,cc,cpp,cxx,java}]
 indent_style = space
-indent_size = 2
+indent_size = 4
 trim_trailing_whitespace = true
 
 [*.{py,md,m,sh}]
@@ -30,7 +30,7 @@ trim_trailing_whitespace = true
 
 [*.{html,htm,xml,css}]
 indent_style = space
-indent_size = 2
+indent_size = 4
 trim_trailing_whitespace = true
 
 [/etc/v2ray/**.json]
