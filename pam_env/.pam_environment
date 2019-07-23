@@ -4,12 +4,20 @@ XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 XDG_CACHE_HOME DEFAULT=@{HOME}/.cache
 XDG_DATA_HOME DEFAULT=@{HOME}/.local/share
 
+SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
+EDITOR DEFAULT=vim
+
+# 输入法
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 
+# KDE 防撕裂
 KWIN_TRIPLE_BUFFER=1
 
+# 解决 Qt Creator 莫名的菜单消失问题
 QTCREATOR_DISABLE_NATIVE_MENUBAR=1
 
-SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+# 优化 less 输出
+LESS=eFRX

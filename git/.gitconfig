@@ -1,6 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	quotepath = false
+	pager = less
 [alias]
 	co = checkout
 	ci = commit
@@ -16,5 +17,3 @@
 	email = xiaomublue@gmail.com
 [http]
 	proxy = socks5h://localhost:1080
-[pager]
-	branch = false
