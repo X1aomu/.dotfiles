@@ -17,7 +17,7 @@ while getopts "nV" opt; do
     esac
 done
 shift $((OPTIND-1))
-stow="stow $verbose $dryrun"
+stow="stow --dotfiles $verbose $dryrun"
 
 if [ -z $@ ]; then
     use_all=1
