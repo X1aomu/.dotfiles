@@ -7,6 +7,14 @@ if [[ $- != *i* ]]; then
     return
 fi
 
+# blur alacritty in KDE
+# -----------
+xdotool search --class Alacritty | xargs xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id
+
+# environment
+# ------------
+export EDITOR='vim'
+
 # fzf
 # ------------
 if `which fzf > /dev/null`; then
@@ -24,7 +32,7 @@ fi
 # ------------
 if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
     ZSH_AUTOSUGGEST_USE_ASYNC="" # enable asynchronous mode
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
     source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
@@ -33,9 +41,5 @@ fi
 if [[ -z "$TMUX" ]]; then
     tmux new -A -s `hostname`
 fi
-
-# environment
-# ------------
-export EDITOR='vim'
 
 # vim: set et ts=4 sw=4 :
