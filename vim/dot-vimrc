@@ -16,15 +16,14 @@ call plug#begin('~/.vim/plugged')
 " colorthemes
 Plug 'lifepillar/vim-solarized8'
 Plug 'joshdick/onedark.vim'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 " editing
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 " look
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " lang
@@ -61,7 +60,6 @@ set ttimeoutlen=10
 
 " first of all
 set nocompatible
-syntax enable
 
 " look
 set ruler
@@ -101,11 +99,17 @@ if exists('+termguicolors')
 endif
 
 " color scheme
+syntax on
 set background=light
 let g:solarized_extra_hi_groups = 1
-colorscheme solarized8
-let g:airline_theme = 'solarized'
-let g:airline_powerline_fonts = 1
+let g:solarized_termtrans = 1
+let g:onedark_terminal_italics = 1
+let g:dracula_colorterm = 0
+let g:dracula_italic = 1
+colorscheme dracula
+let g:lightline = {
+  \ 'colorscheme': 'dracula',
+  \ }
 
 if has('mouse')
   set mouse=a
