@@ -57,6 +57,7 @@ nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 
 inoremap jk <ESC>
 set timeout
+set ttimeout
 set timeoutlen=300
 set ttimeoutlen=10
 
@@ -102,7 +103,7 @@ colorscheme solarized8
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 
-syntax on
+syntax enable
 
 if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
