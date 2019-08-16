@@ -63,6 +63,7 @@ set ttimeoutlen=10
 
 " first of all
 set nocompatible
+syntax enable
 
 " look
 set ruler
@@ -103,7 +104,26 @@ colorscheme solarized8
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 
-syntax enable
+if has('mouse')
+  set mouse=a
+endif
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
+
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
 
 if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
@@ -117,17 +137,6 @@ if has("autocmd")
       \ endif
   augroup END " vimrcEx
 endif " has("autocmd")
-
-if has("vms")
-  set nobackup  " do not keep a backup file, use versions instead
-else
-  set nobackup    " keep a backup file (restore to previous version)
-  set undofile  " keep an undo file (undo changes after closing)
-endif
-
-if has('mouse')
-  set mouse=a
-endif
 
 if has('langmap') && exists('+langnoremap')
   " Prevent that the langmap option applies to characters that result from a
