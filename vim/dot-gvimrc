@@ -13,8 +13,6 @@ set guioptions-=L
 " right-hand scrollbar
 set guioptions-=r
 set guioptions-=R
-" autoselect
-set guioptions+=a
 " use console dialog
 set guioptions+=c
 " use tabline instead of guitablabel

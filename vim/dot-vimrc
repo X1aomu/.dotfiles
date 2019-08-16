@@ -87,6 +87,11 @@ set smarttab
 set history=1000
 set modeline
 set modelines=3
+if has('unnamedplus')
+  set clipboard=unnamedplus,unnamed,autoselect,exclude:cons\|linux
+else
+  set clipboard=unnamed,exclude:cons\|linux
+endif
 
 " Enable true color
 if exists('+termguicolors')
