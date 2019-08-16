@@ -19,7 +19,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " editing
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -29,9 +28,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " lang
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
+Plug 'sheerun/vim-polyglot' " A solid language pack for Vim.
 Plug 'ambv/black', {'for': 'python'}
-Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug '~/.vim/plugged/YouCompleteMe' " YCM isn't managed by vim-plug this way
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
