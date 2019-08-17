@@ -1,7 +1,7 @@
 if has("unix")
   set guifont=monospace\ 10
 elseif has("win32") || has("win64")
-  set guifont=Consolas:h12
+  set guifont=Consolas:h10
 endif
 " toolbar
 set guioptions-=T
@@ -21,7 +21,7 @@ set guioptions-=e
 set guioptions+=k
 
 set columns=128
-set lines=36
+set lines=40
 
 autocmd GuiEnter * silent exec "!transset -a 0.50"
 
