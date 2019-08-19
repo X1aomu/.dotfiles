@@ -9,8 +9,8 @@ SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 EDITOR DEFAULT=vim
 
 # 输入法
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
 XMODIFIERS=@im=fcitx
 
 # KDE 防撕裂
