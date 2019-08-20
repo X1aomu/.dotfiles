@@ -1,3 +1,11 @@
+if !exists("g:os")
+  if has("win64") || has("win32") || has("win16")
+    let g:os = "Windows"
+  else
+    let g:os = substitute(system('uname'), '\n', '', '')
+  endif
+endif
+
 let mapleader = "\<Space>"
 
 "===== Section Start =====
@@ -85,9 +93,7 @@ set smarttab
 set history=1000
 set modeline
 set modelines=3
-if has('unnamedplus')
-  set clipboard=unnamed,autoselect,exclude:cons\|linux
-else
+if g:os == "Linux"
   set clipboard=unnamed,exclude:cons\|linux
 endif
 
