@@ -41,6 +41,7 @@ Plug '~/.vim/plugged/YouCompleteMe' " YCM isn't managed by vim-plug this way
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+Plug 'dense-analysis/ale'
 " other
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-obsession'
@@ -158,5 +159,5 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-set fileencodings=usc-bom,utf-8,default,gb18030,cp936,latin1
+set fileencodings=usc-bom,utf-8,cp936,gb18030,big5,latin1,default
 " vim: set et sts=2 sw=2 :
