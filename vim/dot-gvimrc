@@ -1,7 +1,7 @@
 if g:os == "Linux"
   set guifont=monospace\ 10
 elseif g:os == "Windows"
-  set guifont=Consolas:h10
+  set guifont=Cascadia\ Code:h10
 endif
 " toolbar
 set guioptions-=T

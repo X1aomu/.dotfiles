@@ -53,6 +53,8 @@ call plug#end()
 " vim-plug               |
 "=========================
 
+" mappings for plugins
+
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K><c-o> :pyf /usr/share/clang/clang-format.py<cr>
 
@@ -61,7 +63,10 @@ nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jD :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 
+" own mappings
+
 inoremap jk <ESC>
+
 set timeout
 set ttimeout
 set timeoutlen=300
@@ -89,6 +94,8 @@ set wrap
 " indent
 set noautoindent
 set smarttab
+
+set autoread " useful when :w! sudo tee % >/dev/null
 
 " misc
 set history=1000
