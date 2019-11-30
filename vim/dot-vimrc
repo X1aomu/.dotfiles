@@ -36,12 +36,12 @@ Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " lang
 Plug 'sheerun/vim-polyglot' " A solid language pack for Vim.
-Plug 'ambv/black', {'for': 'python'}
+"Plug 'ambv/black', {'for': 'python'}
 Plug '~/.vim/plugged/YouCompleteMe' " YCM isn't managed by vim-plug this way
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 " other
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-obsession'
@@ -87,14 +87,15 @@ set ignorecase smartcase
 set incsearch
 " navigation
 set scrolloff=1
+set nowrap
+set sidescroll=5
 set backspace=indent,eol,start " allow backspacing over everything
 set whichwrap=b,s,<,>,[,]
-set wrap
 
-" indent
-set noautoindent
+" editing
+set shiftround
+set autoindent
 set smarttab
-
 set autoread " useful when :w! sudo tee % >/dev/null
 
 " misc
