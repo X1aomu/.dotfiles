@@ -35,8 +35,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 " lang
-Plug 'sheerun/vim-polyglot' " A solid language pack for Vim.
-"Plug 'ambv/black', {'for': 'python'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug '~/.vim/plugged/YouCompleteMe' " YCM isn't managed by vim-plug this way
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
@@ -118,12 +117,11 @@ syntax on
 set background=light
 let g:solarized_extra_hi_groups = 1
 let g:solarized_termtrans = 1
-let g:onedark_terminal_italics = 1
 let g:dracula_colorterm = 0
 let g:dracula_italic = 1
-colorscheme dracula
+colorscheme solarized8
 let g:lightline = {
-  \ 'colorscheme': 'dracula',
+  \ 'colorscheme': 'solarized',
   \ }
 
 if has('mouse')
