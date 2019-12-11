@@ -185,7 +185,7 @@ color_schemes:
       cyan:    '0x9aedfe'
       white:   '0xe6e6e6'
   solarized_light: &solarized_light
-    colors:
+  # note: For better colors of output of ls, do not specify bright color.
     primary:
       background: '0xfdf6e3' # base3
       foreground: '0x657b83' # base00
@@ -201,15 +201,6 @@ color_schemes:
       magenta: '0xd33682' # magenta
       cyan:    '0x2aa198' # cyan
       white:   '0xeee8d5' # base2
-    bright:
-      black:   '0x002b36' # base03
-      red:     '0xcb4b16' # orange
-      green:   '0x586e75' # base01
-      yellow:  '0x657b83' # base00
-      blue:    '0x839496' # base0
-      magenta: '0x6c71c4' # violet
-      cyan:    '0x93a1a1' # base1
-      white:   '0xfdf6e3' # base3
 
 # Colors
 colors: *solarized_light
