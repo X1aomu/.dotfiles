@@ -338,6 +338,7 @@ done
 # environment
 # ------------
 export EDITOR='vim'
+export PATH="${PATH}:${HOME}/.cargo/bin"
 
 # fzf
 # ------------

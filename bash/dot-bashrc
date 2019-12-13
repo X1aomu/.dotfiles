@@ -13,6 +13,10 @@ if [[ $- != *i* ]]; then
     return
 fi
 
+# environments
+# ------------
+export PATH="${PATH}:${HOME}/.cargo/bin"
+
 # customize
 # ------------
 # Auto "cd" when entering just a path
