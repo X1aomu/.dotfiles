@@ -19,7 +19,7 @@ window:
   # If both are `0`, this setting is ignored.
   dimensions:
     columns: 128
-    lines: 40
+    lines: 46
 
   # Window position (changes require restart)
   #
@@ -186,6 +186,7 @@ color_schemes:
       white:   '0xe6e6e6'
   solarized_light: &solarized_light
   # note: For better colors of output of ls, do not specify bright color.
+  # BOLD OUGHT TO BE BOLD
     primary:
       background: '0xfdf6e3' # base3
       foreground: '0x657b83' # base00
