@@ -27,7 +27,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " editing
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 " look
@@ -91,8 +91,9 @@ set whichwrap=b,s,<,>,[,]
 " editing
 set shiftround
 set autoindent
+set smartindent
+set cindent
 set smarttab
-set autoread " useful when :w! sudo tee % >/dev/null
 
 " misc
 set history=1000
@@ -188,6 +189,8 @@ if executable('pyls')
 endif
 let g:lsp_signs_enabled = 1 " enable signs
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_highlight_references_enabled = 1
+highlight lspReference ctermbg=Yellow guibg=Yellow
 "===== vim-lsp =====
 
 "===== asyncomplete =====
