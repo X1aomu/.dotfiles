@@ -1,0 +1,17 @@
+# Common profile for bash and zsh.
+# Such as environments, alias and etc.
+
+# environment
+# ------------
+export EDITOR='vim'
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+
+# alias
+# ------------
+alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only'
+
+# vim: set et ts=4 sw=4 :
+
+export PATH="$HOME/.cargo/bin:$PATH"

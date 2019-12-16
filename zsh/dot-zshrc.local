@@ -1,3 +1,9 @@
+# source .profile
+# -----------
+if [ -f "$HOME/.profile" ]; then
+    source "$HOME/.profile"
+fi
+
 # load custom settings for grml-zsh-config
 # -----------
 if [ -f "$HOME/.zshrc.grml" ]; then
@@ -11,11 +17,6 @@ if `which xdotool > /dev/null`; then
         xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $w_id
     done
 fi
-
-# environment
-# ------------
-export EDITOR='vim'
-export PATH="${PATH}:${HOME}/.cargo/bin"
 
 # fzf
 # ------------
@@ -43,9 +44,5 @@ fi
 if [[ -z "$TMUX" ]]; then
     tmux new -A -s `hostname`
 fi
-
-# alias
-# ------------
-alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only'
 
 # vim: set et ts=4 sw=4 :
