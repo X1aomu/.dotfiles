@@ -53,19 +53,27 @@ call plug#end()
 "=========================
 
 " mappings for plugins
-
-map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-imap <C-K><c-o> :pyf /usr/share/clang/clang-format.py<cr>
-
-map <leader>t :TagbarToggle<CR>
+noremap <leader>tt :TagbarToggle<CR>
+noremap <leader>lrr :LspRename<CR>
+noremap <leader>lca :LspCodeAction<CR>
+noremap <leader>ld  :LspDeclaration<CR>
+noremap <leader>lD  :LspDefinition<CR>
+noremap <leader>lf  :LspDocumentFold<CR>
+noremap <leader>lF  :LspDocumentFormat<CR>
+xnoremap <leader>lF :LspDocumentRangeFormat<CR>
+noremap <leader>lsd :LspDocumentSymbol<CR>
+noremap <leader>lsw :LspWorkspaceSymbol<CR>
+noremap <leader>li  :LspImplementation<CR>
+noremap <leader>lr  :LspReferences<CR>
+noremap <CR> :ccl<CR><CR> " auto close quickfix window
 
 " own mappings
-
 inoremap jk <ESC>
+nnoremap <BS> :nohl<CR>
 
 set timeout
 set ttimeout
-set timeoutlen=300
+set timeoutlen=1000
 set ttimeoutlen=10
 
 " first of all
@@ -188,8 +196,14 @@ if executable('pyls')
     \ })
 endif
 let g:lsp_signs_enabled = 1 " enable signs
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'} " icons require GUI
+let g:lsp_signs_hint = {'text': '!'} " icons require GUI
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_highlight_references_enabled = 1
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
 highlight lspReference ctermbg=Yellow guibg=Yellow
 "===== vim-lsp =====
 
@@ -203,17 +217,6 @@ set completeopt+=preview
 " auto close preview window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 "===== asyncomplete =====
-
-" UNUSED *********
-"Plug '~/.vim/plugged/YouCompleteMe' " YCM isn't managed by vim-plug this way
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
-"let g:ycm_confirm_extra_conf = 0
-"nnoremap <leader>jj :YcmCompleter GoTo<CR>
-"nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-"nnoremap <leader>jD :YcmCompleter GoToDefinition<CR>
-"nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
-" UNUSED *********
 
 set fileencodings=usc-bom,utf-8,cp936,gb18030,big5,latin1,default
 " vim: set et sts=2 sw=2 :
