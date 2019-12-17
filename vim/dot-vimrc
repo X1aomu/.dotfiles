@@ -211,7 +211,7 @@ highlight lspReference ctermbg=Yellow guibg=Yellow
 " tap completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+"inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " enable preview window
 set completeopt+=preview
 " auto close preview window when completion is done
