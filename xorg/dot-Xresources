@@ -2,7 +2,7 @@
 
 ! for monitor eDP-1
 ! needed for some programs (like firefox) to detect dpi properly
-Xft.dpi: 125
+!Xft.dpi: 125
 
 URxvt*inheritPixmap: true
 URxvt*.transparent: true
