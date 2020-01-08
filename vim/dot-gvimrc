@@ -1,5 +1,5 @@
 if g:os == "Linux"
-  set guifont=monospace\ 10
+  set guifont=monospace\ 11
 elseif g:os == "Windows"
   set guifont=Cascadia\ Code:h10
 endif
@@ -20,8 +20,8 @@ set guioptions-=e
 " don't auto resize window size
 set guioptions+=k
 
-set columns=100
-set lines=40
+set columns=146
+set lines=46
 
 autocmd GuiEnter * silent exec "!transset -a 0.50"
 
