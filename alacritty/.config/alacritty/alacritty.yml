@@ -212,6 +212,7 @@ color_schemes:
   solarized_light: &solarized_light
     primary:
       background: '0xfdf6e3' # base3
+      #background: '0xedd4b1' # base3 # title bar color
       foreground: '0x657b83' # base00
     cursor:
       text:   '0xfdf6e3' # base3
@@ -269,7 +270,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.40
+background_opacity: 0.60
 
 # Mouse bindings
 #

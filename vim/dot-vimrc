@@ -72,6 +72,8 @@ noremap <CR> :ccl<CR><CR> " auto close quickfix window
 inoremap jk <ESC>
 nnoremap <BS> :nohl<CR>
 
+command W :w !sudo tee % >/dev/null
+
 set timeout
 set ttimeout
 set timeoutlen=1000
