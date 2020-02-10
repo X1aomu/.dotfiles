@@ -31,13 +31,13 @@ elif [ -d ~/.fzf ]; then
     source "$HOME/.fzf/shell/key-bindings.zsh"
 fi
 
-# zsh-autosuggestions
-# ------------
-if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-    ZSH_AUTOSUGGEST_USE_ASYNC="" # enable asynchronous mode
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
-    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+## zsh-autosuggestions
+## ------------
+#if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+#    ZSH_AUTOSUGGEST_USE_ASYNC="" # enable asynchronous mode
+#    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
+#    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#fi
 
 # tmux
 # ------------
