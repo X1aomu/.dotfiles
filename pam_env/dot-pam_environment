@@ -18,7 +18,7 @@ XDG_DATA_HOME DEFAULT=@{HOME}/.local/share
 
 SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
-EDITOR DEFAULT=vim
+EDITOR=vim
 
 # 输入法
 GTK_IM_MODULE=fcitx5
