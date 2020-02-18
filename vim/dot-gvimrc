@@ -20,8 +20,8 @@ set guioptions-=e
 " don't auto resize window size
 set guioptions+=k
 
-set columns=146
-set lines=46
+set columns=140
+set lines=40
 
 autocmd GuiEnter * silent exec "!transset -a 0.50"
 

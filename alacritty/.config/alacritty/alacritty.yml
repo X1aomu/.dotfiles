@@ -212,7 +212,6 @@ color_schemes:
   solarized_light: &solarized_light
     primary:
       background: '0xfdf6e3' # base3
-      #background: '0xedd4b1' # base3 # title bar color
       foreground: '0x657b83' # base00
     cursor:
       text:   '0xfdf6e3' # base3
@@ -237,7 +236,7 @@ color_schemes:
       white:   '0xfdf6e3' # base3
 
 # Colors
-colors: *solarized_light
+colors: *solarized_dark
 
 
 # Visual Bell
