@@ -87,7 +87,7 @@ set ruler
 set number
 set showcmd
 set laststatus=2
-set cursorline
+"set cursorline
 
 " searching
 set hlsearch
