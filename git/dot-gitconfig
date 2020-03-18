@@ -7,6 +7,7 @@
 	ci = commit
 	st = status
 	br = branch
+	sw = switch
 	hist = log --graph --oneline
 	type = cat-file -t
 	dump = cat-file -p
@@ -16,4 +17,4 @@
 	name = X1aomu
 	email = xiaomublue@gmail.com
 [http]
-	proxy = socks5h://localhost:1080
+	proxy = http://localhost:11081
