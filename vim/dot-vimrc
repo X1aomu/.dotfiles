@@ -124,7 +124,7 @@ endif
 
 " color scheme
 syntax on
-set background=dark
+set background=light
 let g:solarized_extra_hi_groups = 1
 let g:solarized_termtrans = 1
 let g:dracula_colorterm = 0
@@ -216,5 +216,5 @@ set completeopt+=preview
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 "===== asyncomplete =====
 
-set fileencodings=usc-bom,utf-8,cp936,gb18030,big5,latin1,default
+set fileencodings=usc-bom,utf-8,gb18030,chinese,taiwan,japan,korea,utf-16,utf-16le,default,latin1
 " vim: set et sts=2 sw=2 :

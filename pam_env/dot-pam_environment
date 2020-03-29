@@ -21,9 +21,9 @@ SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 EDITOR=vim
 
 # 输入法
-GTK_IM_MODULE=fcitx
+GTK_IM_MODULE=fcitx5
 QT_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx
+XMODIFIERS=@im=fcitx5
 
 # KDE 防撕裂
 KWIN_TRIPLE_BUFFER=1
@@ -34,8 +34,17 @@ QTCREATOR_DISABLE_NATIVE_MENUBAR=1
 # 优化 less 输出
 LESS=FRX
 
-# DPI
+# winit DPI
 WINIT_HIDPI_FACTOR=1
 
 # make firefox (and maybe all gtk programs) use kdialog
-GTK_USE_PORTAL=1
+# there is a problem under wayland
+#GTK_USE_PORTAL=1
+
+## wayland support
+#QT_QPA_PLATFORM=wayland-egl
+#CLUTTER_BACKEND=wayland
+#SDL_VIDEODRIVER=wayland
+##MOZ_ENABLE_WAYLAND=1
+## Some Java AWT applications would not display properly unless you set the following.
+#_JAVA_AWT_WM_NONREPARENTING=1
