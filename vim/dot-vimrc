@@ -22,26 +22,58 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " colorthemes
+let g:solarized_extra_hi_groups = 1
+let g:solarized_termtrans = 1
 Plug 'lifepillar/vim-solarized8'
+let g:onedark_terminal_italics = 1
 Plug 'joshdick/onedark.vim'
+let g:dracula_colorterm = 0
+let g:dracula_italic = 1
 Plug 'dracula/vim', { 'as': 'dracula' }
 " editing
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs', {'for': ['rust']}
+let g:AutoPairsFlyMode = 1
+Plug 'jiangmiao/auto-pairs', {'for': ['rust', 'c', 'cpp', 'python']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 " look
-Plug 'itchyny/lightline.vim'
-Plug 'luochen1990/rainbow'
+
+"let g:lightline = { 'colorscheme': 'onedark', }
+"Plug 'itchyny/lightline.vim'
+
 let g:rainbow_active = 1
+Plug 'luochen1990/rainbow'
+
+let g:airline#extensions#ale#enabled = 1
+Plug 'vim-airline/vim-airline'
+let g:airline_theme = 'onedark'
+Plug 'vim-airline/vim-airline-themes'
+
 " lang
-Plug 'cespare/vim-toml'
-Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
+"Plug 'cespare/vim-toml'
+"Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+"Plug 'natebosch/vim-lsc'
+"let g:lsc_server_commands = {'rust': 'rls'}
+"let g:lsc_auto_map = v:true
+"autocmd CompleteDone * silent! pclose
+
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_set_balloons = 1
+set ttymouse=xterm2
+Plug 'dense-analysis/ale'
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'rust': ['rustfmt'],
+  \}
+let g:ale_fix_on_save = 1
+
 " other
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-obsession'
@@ -55,18 +87,6 @@ call plug#end()
 
 " mappings for plugins
 noremap <leader>tt :TagbarToggle<CR>
-noremap <leader>lrr :LspRename<CR>
-noremap <leader>lca :LspCodeAction<CR>
-noremap <leader>ld  :LspDeclaration<CR>
-noremap <leader>lD  :LspDefinition<CR>
-noremap <leader>lf  :LspDocumentFold<CR>
-noremap <leader>lF  :LspDocumentFormat<CR>
-xnoremap <leader>lF :LspDocumentRangeFormat<CR>
-noremap <leader>lsd :LspDocumentSymbol<CR>
-noremap <leader>lsw :LspWorkspaceSymbol<CR>
-noremap <leader>li  :LspImplementation<CR>
-noremap <leader>lr  :LspReferences<CR>
-noremap <CR> :ccl<CR><CR> " auto close quickfix window
 
 " own mappings
 inoremap jk <ESC>
@@ -96,7 +116,7 @@ set incsearch
 " navigation
 set scrolloff=1
 set nowrap
-set sidescroll=5
+"set sidescroll=5
 set backspace=indent,eol,start " allow backspacing over everything
 set whichwrap=b,s,<,>,[,]
 
@@ -124,16 +144,8 @@ endif
 
 " color scheme
 syntax on
-set background=light
-let g:solarized_extra_hi_groups = 1
-let g:solarized_termtrans = 1
-let g:dracula_colorterm = 0
-let g:dracula_italic = 1
-colorscheme solarized8
-let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ }
-
+set background=dark
+colorscheme onedark
 
 if has('mouse')
   set mouse=a
@@ -169,52 +181,5 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-"===== vim-lsp =====
-if executable('rls')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'rls',
-    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-    \ 'workspace_config': {'rust': {'all_features': 'true', 'racer_completion': 'true', 'clippy_preference': 'on'}},
-    \ 'whitelist': ['rust'],
-    \ })
-endif
-if executable('clangd')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'clangd',
-    \ 'cmd': {server_info->['clangd', '-background-index']},
-    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-    \ })
-endif
-if executable('pyls')
-  " pip install python-language-server
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'pyls',
-    \ 'cmd': {server_info->['pyls']},
-    \ 'whitelist': ['python'],
-    \ })
-endif
-let g:lsp_signs_enabled = 1 " enable signs
-let g:lsp_signs_error = {'text': '✗'}
-let g:lsp_signs_warning = {'text': '‼'} " icons require GUI
-let g:lsp_signs_hint = {'text': '!'} " icons require GUI
-let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-let g:lsp_highlight_references_enabled = 1
-"set foldmethod=expr
-"  \ foldexpr=lsp#ui#vim#folding#foldexpr()
-"  \ foldtext=lsp#ui#vim#folding#foldtext()
-highlight lspReference ctermbg=Yellow guibg=Yellow
-"===== vim-lsp =====
-
-"===== asyncomplete =====
-" tap completion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-" enable preview window
-set completeopt+=preview
-" auto close preview window when completion is done
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-"===== asyncomplete =====
-
-set fileencodings=usc-bom,utf-8,gb18030,chinese,taiwan,japan,korea,utf-16,utf-16le,default,latin1
+set fileencodings=usc-bom,utf-8,gb18030,chinese,taiwan,japan,korea,utf-16le,utf-16,default,latin1
 " vim: set et sts=2 sw=2 :
