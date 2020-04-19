@@ -45,6 +45,8 @@ WINIT_HIDPI_FACTOR=1
 #QT_QPA_PLATFORM=wayland-egl
 #CLUTTER_BACKEND=wayland
 #SDL_VIDEODRIVER=wayland
-##MOZ_ENABLE_WAYLAND=1
 ## Some Java AWT applications would not display properly unless you set the following.
 #_JAVA_AWT_WM_NONREPARENTING=1
+
+# firefox wayland support
+MOZ_ENABLE_WAYLAND=1
