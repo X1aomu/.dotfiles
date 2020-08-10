@@ -17,4 +17,6 @@
 	name = X1aomu
 	email = xiaomublue@gmail.com
 [http]
-	proxy = http://localhost:11081
+	proxy = http://localhost:12081
+[pull]
+	ff = only

@@ -67,7 +67,7 @@ let g:ale_set_quickfix = 1
 let g:ale_set_balloons = 1
 set ttymouse=xterm2
 Plug 'dense-analysis/ale'
-let g:ale_linters = {'rust': ['rls']}
+let g:ale_linters = {'rust': ['rust-analyzer', 'rls']}
 let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \   'rust': ['rustfmt'],
@@ -180,6 +180,10 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 set fileencodings=usc-bom,utf-8,gb18030,chinese,taiwan,japan,korea,utf-16le,utf-16,default,latin1
 " vim: set et sts=2 sw=2 :

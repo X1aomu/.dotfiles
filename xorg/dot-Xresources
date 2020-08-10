@@ -1,4 +1,4 @@
-!Emacs*geometry: 120x48
+Emacs*geometry: 134x43
 
 ! for monitor eDP-1
 ! needed for some programs (like firefox) to detect dpi properly
@@ -56,5 +56,5 @@ URxvt.boldFont: xft:monospace-10:Bold
 *.color14:    #54ced6
 *.color15:    #ffffff
                      
-rofi.font: Noto Sans Mono 20
+rofi.font: monospace 20
 rofi.width: 40       

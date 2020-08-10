@@ -18,8 +18,8 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 107
-    lines: 41
+    columns: 134
+    lines: 43
 
   # Window position (changes require restart)
   #
@@ -115,7 +115,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -222,9 +222,33 @@ color_schemes:
       magenta: '0x6c71c4' # violet
       cyan:    '0x93a1a1' # base1
       white:   '0xfdf6e3' # base3
+  one: &one_dark
+    primary:
+      background: '#282c34'
+      foreground: '#abb2bf'
+    normal:
+      # NOTE: Use '#131613' for the `black` color if you'd like to see
+      # black text on the background.
+      black:   '#282c34'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#abb2bf'
+    bright:
+      black:   '#5c6370'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#ffffff'
 
 # Colors
-colors: *solarized_light
+colors: *one_dark
 
 
 # Visual Bell
@@ -257,7 +281,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.60
+background_opacity: 0.70
 
 # Mouse bindings
 #

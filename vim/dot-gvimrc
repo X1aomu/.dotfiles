@@ -1,5 +1,5 @@
 if g:os == "Linux"
-  set guifont=monospace\ 11
+  set guifont=monospace\ 12
 elseif g:os == "Windows"
   set guifont=Cascadia\ Code:h10
 endif
