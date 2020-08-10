@@ -1,6 +1,9 @@
 # Common profile for bash and zsh.
 # Such as environments, alias and etc.
 
+[ -n "${HOME_DOT_PROFILE}" ] && return;
+export HOME_DOT_PROFILE=0;
+
 # environment
 # ------------
 if [ -d "$HOME/.local/bin" ]; then
@@ -9,10 +12,67 @@ fi
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+if [ -d "$HOME/.emacs.d/bin" ]; then
+    export PATH="$HOME/.emacs.d/bin:$PATH"
+fi
+
+export LANG=en_GB.UTF-8
+export LC_CTYPE=zh_CN.UTF-8
+export LC_NUMERIC=zh_CN.UTF-8
+export LC_TIME=en_GB.UTF-8
+export LC_COLLATE=zh_CN.UTF-8
+export LC_MONETARY=zh_CN.UTF-8
+export LC_MESSAGES=en_GB.UTF-8
+export LC_PAPER=en_GB.UTF-8
+export LC_NAME=en_GB.UTF-8
+export LC_ADDRESS=en_GB.UTF-8
+export LC_TELEPHONE=en_GB.UTF-8
+export LC_MEASUREMENT=zh_CN.UTF-8
+export LC_IDENTIFICATION=en_GB.UTF-8
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+export EDITOR=vim
+
+# 输入法
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS='@im=fcitx5'
+
+# KDE 防撕裂
+export KWIN_TRIPLE_BUFFER=1
+
+# 解决 Qt Creator 莫名的菜单消失问题
+export QTCREATOR_DISABLE_NATIVE_MENUBAR=1
+
+# 优化 less 输出
+export LESS=FRX
+
+# winit DPI
+export WINIT_HIDPI_FACTOR=1
+
+## make firefox (and maybe all gtk programs) use kdialog
+## there is a problem under wayland
+#export GTK_USE_PORTAL=1
+#
+## wayland support
+#export QT_QPA_PLATFORM=wayland-egl
+#export CLUTTER_BACKEND=wayland
+#export SDL_VIDEODRIVER=wayland
+## Some Java AWT applications would not display properly unless you set the following.
+#export _JAVA_AWT_WM_NONREPARENTING=1
+#
+## firefox wayland support
+#export MOZ_ENABLE_WAYLAND=1
 
 # alias
 # ------------
 alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only'
 alias fw='sudo firewall-cmd'
+alias e='emacs -nw'
 
 # vim: set et ts=4 sw=4 :
