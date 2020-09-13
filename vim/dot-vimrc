@@ -67,7 +67,7 @@ let g:ale_set_quickfix = 1
 let g:ale_set_balloons = 1
 set ttymouse=xterm2
 Plug 'dense-analysis/ale'
-let g:ale_linters = {'rust': ['rust-analyzer', 'rls']}
+let g:ale_linters = {'rust': ['analyzer']}
 let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \   'rust': ['rustfmt'],
