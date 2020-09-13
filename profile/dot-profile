@@ -1,6 +1,12 @@
 # Common profile for bash and zsh.
 # Such as environments, alias and etc.
 
+# alias
+# ------------
+alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only'
+alias fw='sudo firewall-cmd'
+alias e='emacs -nw'
+
 [ -n "${HOME_DOT_PROFILE}" ] && return;
 export HOME_DOT_PROFILE=0;
 
@@ -68,11 +74,5 @@ export WINIT_HIDPI_FACTOR=1
 #
 ## firefox wayland support
 #export MOZ_ENABLE_WAYLAND=1
-
-# alias
-# ------------
-alias nvrun='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only'
-alias fw='sudo firewall-cmd'
-alias e='emacs -nw'
 
 # vim: set et ts=4 sw=4 :
