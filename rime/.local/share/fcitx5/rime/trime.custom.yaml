@@ -1,0 +1,3 @@
+---
+patch:
+  "preset_keys/Hide": {label: 删词, send: Control+Delete}

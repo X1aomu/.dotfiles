@@ -1,0 +1,5 @@
+---
+patch:
+  # 智能纠错 https://github.com/rime/librime/pull/228
+  "translator/enable_correction": true
+  __include: emoji_suggestion:/patch
