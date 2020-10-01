@@ -58,9 +58,6 @@ export QTCREATOR_DISABLE_NATIVE_MENUBAR=1
 # 优化 less 输出
 export LESS=FRX
 
-# winit DPI
-export WINIT_HIDPI_FACTOR=1
-
 ## make firefox (and maybe all gtk programs) use kdialog
 ## there is a problem under wayland
 #export GTK_USE_PORTAL=1
