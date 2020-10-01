@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 let g:solarized_extra_hi_groups = 1
 let g:solarized_termtrans = 1
 let g:onedark_terminal_italics = 1
+let g:one_allow_italics = 1
 let g:dracula_colorterm = 0 " 透明背景
 let g:dracula_italic = 1
 Plug 'lifepillar/vim-solarized8'
