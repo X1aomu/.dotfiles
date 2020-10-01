@@ -128,8 +128,6 @@ set smarttab
 
 " misc
 set history=1000
-set modeline
-set modelines=3
 if g:os == "Linux"
   set clipboard=unnamed,exclude:cons\|linux
 endif
