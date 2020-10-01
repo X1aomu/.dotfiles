@@ -24,29 +24,27 @@ call plug#begin('~/.vim/plugged')
 " colorthemes
 let g:solarized_extra_hi_groups = 1
 let g:solarized_termtrans = 1
-Plug 'lifepillar/vim-solarized8'
 let g:onedark_terminal_italics = 1
-Plug 'joshdick/onedark.vim'
-let g:dracula_colorterm = 0
+let g:dracula_colorterm = 0 " 透明背景
 let g:dracula_italic = 1
+Plug 'lifepillar/vim-solarized8'
+Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " editing
-Plug 'editorconfig/editorconfig-vim'
 let g:AutoPairsFlyMode = 1
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs', {'for': ['rust', 'c', 'cpp', 'python']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 " look
-
 "let g:lightline = { 'colorscheme': 'onedark', }
-"Plug 'itchyny/lightline.vim'
-
 let g:rainbow_active = 1
-Plug 'luochen1990/rainbow'
-
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme = 'one'
+"Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
 Plug 'vim-airline/vim-airline'
-let g:airline_theme = 'onedark'
 Plug 'vim-airline/vim-airline-themes'
 
 " lang
@@ -144,8 +142,8 @@ endif
 
 " color scheme
 syntax on
-set background=dark
-colorscheme onedark
+set background=light
+colorscheme one
 
 if has('mouse')
   set mouse=a
