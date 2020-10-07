@@ -27,6 +27,17 @@ window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
 
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background, but no title bar buttons
+  decorations: none
+
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
 
@@ -52,7 +63,7 @@ font:
     family: Cascadia Mono
 
   # Point size
-  size: 9.0
+  size: 8.0
 
   # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
   # screens and make reading text a little easier.
@@ -64,7 +75,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 1
+    y: 0
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false # BOLD OUGHT TO BE BOLD
