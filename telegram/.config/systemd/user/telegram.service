@@ -10,7 +10,7 @@ KillMode=process
 Restart=on-abnormal
 RestartSec=2
 #MemoryHigh=512M
-MemoryMax=512M
+MemoryMax=1G
 MemorySwapMax=256M
 
 [Install]
