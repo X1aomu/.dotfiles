@@ -20,15 +20,15 @@ fi
 
 # fzf
 # ------------
-if `which fzf > /dev/null`; then
-    source "/usr/share/fzf/completion.zsh"
-    source "/usr/share/fzf/key-bindings.zsh"
-elif [ -d ~/.fzf ]; then
+if [ -d ~/.fzf ]; then
     if [[ ! "$PATH" == "*$HOME/.fzf/bin*" ]]; then
         export PATH="$PATH:$HOME/.fzf/bin"
     fi
     source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
     source "$HOME/.fzf/shell/key-bindings.zsh"
+elif `which fzf > /dev/null`; then
+    source "/usr/share/fzf/completion.zsh"
+    source "/usr/share/fzf/key-bindings.zsh"
 fi
 
 ## zsh-autosuggestions
