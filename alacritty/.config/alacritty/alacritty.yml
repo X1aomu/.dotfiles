@@ -156,51 +156,47 @@ color_schemes:
   one_dark: &one_dark
     primary:
       background: '#282c34'
-      foreground: '#abb2bf'
+      foreground: '#a9b0bd'
     normal:
-      # NOTE: Use '#131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '#282c34'
-      red:     '#e06c75'
+      black:   '#5c6370' # mono-3
+      red:     '#e06c75' # red 1
       green:   '#98c379'
-      yellow:  '#d19a66'
+      yellow:  '#d19a66' # orange 1
       blue:    '#61afef'
       magenta: '#c678dd'
       cyan:    '#56b6c2'
-      white:   '#abb2bf'
+      white:   '#abb2bf' # mono-2
     bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
+      black:   '#5c6370' # mono-3
+      red:     '#be5046' # red 2
       green:   '#98c379'
-      yellow:  '#d19a66'
+      yellow:  '#e5c07b' # orange 2
       blue:    '#61afef'
       magenta: '#c678dd'
       cyan:    '#56b6c2'
-      white:   '#ffffff'
+      white:   '#abb2bf' # mono-2
   one_light: &one_light
     primary:
       background: '#fafafa'
-      foreground: '#4b4b54'
+      foreground: '#383a42'
     normal:
-      # NOTE: Use '#131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '#282c34'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#abb2bf'
+      black:   '#696c77' # mono-2
+      red:     '#e45649' # red 1
+      green:   '#50a14f'
+      yellow:  '#986801' # orange 1
+      blue:    '#4078f2'
+      magenta: '#a626a4'
+      cyan:    '#0184bc'
+      white:   '#a0a1a7' # mono-3
     bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#ffffff'
+      black:   '#696c77' # mono-2
+      red:     '#ca1243' # red 2
+      green:   '#50a14f'
+      yellow:  '#c18401' # orange 2
+      blue:    '#4078f2'
+      magenta: '#a626a4'
+      cyan:    '#0184bc'
+      white:   '#a0a1a7' # mono-3
 
 # Colors
 colors: *one_light
