@@ -13,10 +13,7 @@
 	dump = cat-file -p
 	unstage = reset HEAD --
 	last = log -1 HEAD
-[user]
-	name = X1aomu
-	email = xiaomublue@gmail.com
-[http]
-	proxy = http://localhost:12081
 [pull]
 	ff = only
+[include]
+	path = .gitconfig.local
