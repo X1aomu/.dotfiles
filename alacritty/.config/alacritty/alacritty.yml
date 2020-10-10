@@ -63,7 +63,7 @@ font:
     family: Cascadia Mono
 
   # Point size
-  size: 8.0
+  size: 12.0
 
   # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
   # screens and make reading text a little easier.
