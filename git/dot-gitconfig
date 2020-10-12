@@ -8,7 +8,7 @@
 	st = status
 	br = branch
 	sw = switch
-	hist = log --graph --pretty=format:\"%C(yellow)%h%C(auto) %s %C(yellow)(%C(cyan)%an, %C(magenta)%ad%C(yellow)) %C(yellow)(%C(auto)%D%C(yellow))\" --date=human
+	hist = log --graph --pretty=format:\"%C(yellow)%h%C(auto) %s %C(yellow)(%C(cyan)%an, %C(magenta)%ad%C(yellow))%C(auto)%d\" --date=human
 	type = cat-file -t
 	dump = cat-file -p
 	unstage = reset HEAD --
