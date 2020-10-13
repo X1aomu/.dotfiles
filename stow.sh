@@ -15,7 +15,7 @@ while getopts "nVD" opt; do
         V)
             verbose=""
             ;;
-        V)
+        D)
             delete="-D"
             ;;
     esac
