@@ -59,6 +59,7 @@
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
+                "scrollbarState": "hidden",
                 "source": "Windows.Terminal.Wsl"
             }
         ]
@@ -73,6 +74,7 @@
             "foreground": "#383a42",
             "background": "#fafafa",
             "cursorColor": "#526eff",
+            "selectionBackground": "#e5e5e6",
             "black": "#696c77",
             "red": "#e45649",
             "green": "#50a14f",
@@ -95,6 +97,7 @@
             "foreground": "#abb2bf",
             "background": "#282c34",
             "cursorColor": "#528bff",
+            "selectionBackground": "#3e4451",
             "black": "#5c6370",
             "red": "#e06c75",
             "green": "#98c379",
