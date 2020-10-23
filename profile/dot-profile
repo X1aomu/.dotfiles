@@ -12,15 +12,9 @@ export HOME_DOT_PROFILE=0;
 
 # environment
 # ------------
-if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-if [ -f "$HOME/.cargo/env" ]; then
-    source "$HOME/.cargo/env"
-fi
-if [ -d "$HOME/.emacs.d/bin" ]; then
-    export PATH="$HOME/.emacs.d/bin:$PATH"
-fi
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export LANG=en_GB.UTF-8
 export LC_CTYPE=zh_CN.UTF-8
