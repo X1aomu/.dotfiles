@@ -29,7 +29,7 @@
         {
             // Put settings here that you want to apply to all profiles.
             "cursorShape": "filledBox",
-            "colorScheme": "One Light",
+            "colorScheme": "One Dark",
             "useAcrylic": true,
             "acrylicOpacity": 0.6
         },
@@ -60,6 +60,7 @@
                 "hidden": false,
                 "name": "Debian",
                 "scrollbarState": "hidden",
+                "colorScheme": "One Light",
                 "source": "Windows.Terminal.Wsl"
             }
         ]
@@ -75,22 +76,22 @@
             "background": "#fafafa",
             "cursorColor": "#526eff",
             "selectionBackground": "#e5e5e6",
-            "black": "#696c77",
+            "black": "#383a42",
             "red": "#e45649",
             "green": "#50a14f",
             "yellow": "#c18401",
             "blue": "#4078f2",
             "purple": "#a626a4",
             "cyan": "#0184bc",
-            "white": "#a0a1a7",
-            "brightBlack": "#696c77",
+            "white": "#fafafa",
+            "brightBlack": "#383a42",
             "brightRed": "#e45649",
             "brightGreen": "#50a14f",
             "brightYellow": "#c18401",
             "brightBlue": "#4078f2",
             "brightPurple": "#a626a4",
             "brightCyan": "#0184bc",
-            "brightWhite": "#a0a1a7"
+            "brightWhite": "#fafafa"
         },
         {
             "name": "One Dark",
@@ -98,22 +99,22 @@
             "background": "#282c34",
             "cursorColor": "#528bff",
             "selectionBackground": "#3e4451",
-            "black": "#5c6370",
+            "black": "#282c34",
             "red": "#e06c75",
             "green": "#98c379",
             "yellow": "#e5c07b",
             "blue": "#61afef",
             "purple": "#c678dd",
             "cyan": "#56b6c2",
-            "white": "#828997",
-            "brightBlack": "#5c6370",
+            "white": "#abb2bf",
+            "brightBlack": "#282c34",
             "brightRed": "#e06c75",
             "brightGreen": "#98c379",
             "brightYellow": "#e5c07b",
             "brightBlue": "#61afef",
             "brightPurple": "#c678dd",
             "brightCyan": "#56b6c2",
-            "brightWhite": "#828997"
+            "brightWhite": "#abb2bf"
         }
     ],
 
