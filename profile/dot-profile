@@ -52,18 +52,20 @@ export QTCREATOR_DISABLE_NATIVE_MENUBAR=1
 # 优化 less 输出
 export LESS=FRX
 
-## make firefox (and maybe all gtk programs) use kdialog
-## there is a problem under wayland
-#export GTK_USE_PORTAL=1
-#
-## wayland support
-#export QT_QPA_PLATFORM=wayland-egl
-#export CLUTTER_BACKEND=wayland
-#export SDL_VIDEODRIVER=wayland
-## Some Java AWT applications would not display properly unless you set the following.
-#export _JAVA_AWT_WM_NONREPARENTING=1
-#
-## firefox wayland support
-#export MOZ_ENABLE_WAYLAND=1
+# make firefox (and maybe all gtk programs) use kdialog
+# there is a problem under wayland
+export GTK_USE_PORTAL=1
+
+if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
+    # wayland support
+    export QT_QPA_PLATFORM=wayland-egl
+    export CLUTTER_BACKEND=wayland
+    export SDL_VIDEODRIVER=wayland
+    # Some Java AWT applications would not display properly unless you set the following.
+    export _JAVA_AWT_WM_NONREPARENTING=1
+
+    # firefox wayland support
+    export MOZ_ENABLE_WAYLAND=1
+fi
 
 # vim: set et ts=4 sw=4 :
