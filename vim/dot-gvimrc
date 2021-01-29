@@ -1,7 +1,7 @@
 if g:os == "Linux"
-  set guifont=SF\ Mono\ Semi-Bold\ 12
+  set guifont=JetBrains\ Mono\ 11
 elseif g:os == "Windows"
-  set guifont=Cascadia\ Code:h10
+  set guifont=JetBrains\ Mono:h10
 endif
 " toolbar
 set guioptions-=T
